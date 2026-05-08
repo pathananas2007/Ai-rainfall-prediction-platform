@@ -103,6 +103,6 @@ RainAI/
 └── README.md
 
 
-## Author
+# Author
 
 Anas Pathan
