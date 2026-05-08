@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env/
+venv/
+env/
+ENV/
+.venv/
+
+# VSCode settings (optional)
+.vscode/
+
+# Python cache / temporary files
+*.pyo
+*.pyd
+*.pyc
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# CSV / output files (optional: if you want to keep your data private)
+*.csv
+*.sqlite3
+
+# Matplotlib / plots (optional if generating new plots each time)
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Spyder project settings (if using Spyder IDE)
+.spyderproject
+.spyproject
