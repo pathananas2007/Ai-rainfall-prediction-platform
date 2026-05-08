@@ -101,3 +101,8 @@ RainAI/
 │   └── final 2.ipynb
 │
 └── README.md
+
+
+## Author
+
+Anas Pathan
