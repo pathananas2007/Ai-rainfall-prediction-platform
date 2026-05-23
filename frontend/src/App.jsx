@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { LanguageProvider } from './context/LanguageContext';
+import { SettingsProvider } from './context/SettingsContext';
 import { Toaster } from 'react-hot-toast';
 
 // Pages
@@ -11,10 +13,13 @@ import Dashboard from './pages/Dashboard';
 import Predict from './pages/Predict';
 import History from './pages/History';
 import Analytics from './pages/Analytics';
+import Settings from './pages/Settings';
 
 // Components
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
+import AIChatAssistant from './components/AIChatAssistant';
+import KeyboardShortcuts from './components/KeyboardShortcuts';
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -26,21 +31,25 @@ const ProtectedRoute = ({ children }) => {
 const DashboardLayout = ({ children }) => (
   <div className="min-h-screen bg-slate-50 flex">
     <Sidebar />
-    <div className="flex-1 ml-72 flex flex-col">
+    <div className="flex-1 md:ml-72 flex flex-col min-w-0">
       <Navbar />
       <main className="flex-1 overflow-y-auto">
         {children}
       </main>
     </div>
+    <AIChatAssistant />
+    <KeyboardShortcuts />
   </div>
 );
 
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <Toaster position="top-right" />
-        <Routes>
+      <SettingsProvider>
+        <LanguageProvider>
+          <Router>
+            <Toaster position="top-right" />
+            <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -57,7 +66,6 @@ function App() {
             </ProtectedRoute>
           } />
 
-          {/* Placeholder for history and analytics */}
           <Route path="/history" element={
             <ProtectedRoute>
               <DashboardLayout><History /></DashboardLayout>
@@ -68,10 +76,17 @@ function App() {
               <DashboardLayout><Analytics /></DashboardLayout>
             </ProtectedRoute>
           } />
+          <Route path="/settings" element={
+            <ProtectedRoute>
+              <DashboardLayout><Settings /></DashboardLayout>
+            </ProtectedRoute>
+          } />
 
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </Router>
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+          </Router>
+        </LanguageProvider>
+      </SettingsProvider>
     </AuthProvider>
   );
 }

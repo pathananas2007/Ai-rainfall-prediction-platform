@@ -3,6 +3,7 @@ import os
 import numpy as np
 import pandas as pd
 from backend.database.db import get_db
+from backend.services.gen_ai import generate_ai_explanation
 from datetime import datetime
 from bson import ObjectId
 
@@ -63,24 +64,29 @@ class PredictService:
         confidence     = float(max(probabilities)) * 100
         prediction_str = 'Yes' if prediction_int == 1 else 'No'
 
+        # Generate AI explanation (Gemini or rule-based fallback)
+        ai_explanation = generate_ai_explanation(weather_data, prediction_str, confidence)
+
         # Persist to DB
         predictions_col = get_predictions_collection()
         record = {
-            "userId":     ObjectId(user_id),
-            "inputs":     weather_data,
-            "prediction": prediction_str,
-            "confidence": confidence,
-            "timestamp":  datetime.utcnow()
+            "userId":        ObjectId(user_id),
+            "inputs":        weather_data,
+            "prediction":    prediction_str,
+            "confidence":    confidence,
+            "ai_explanation": ai_explanation,
+            "timestamp":     datetime.utcnow()
         }
         predictions_col.insert_one(record)
 
         return {
-            "_id":        str(record["_id"]),
-            "userId":     str(record["userId"]),
-            "inputs":     weather_data,
-            "prediction": prediction_str,
-            "confidence": confidence,
-            "timestamp":  record["timestamp"].isoformat()
+            "_id":            str(record["_id"]),
+            "userId":         str(record["userId"]),
+            "inputs":         weather_data,
+            "prediction":     prediction_str,
+            "confidence":     confidence,
+            "ai_explanation": ai_explanation,
+            "timestamp":      record["timestamp"].isoformat()
         }
 
     @classmethod

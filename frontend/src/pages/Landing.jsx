@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
-import { CloudRain, Zap, Shield, BarChart3, ArrowRight, ChevronRight, ExternalLink, Sparkles, Brain, TrendingUp, Users, Activity, CheckCircle } from 'lucide-react';
+import { CloudRain, Zap, Shield, BarChart3, ArrowRight, ChevronRight, ExternalLink, Sparkles, Brain, TrendingUp, Users, Activity, CheckCircle, Mail, Globe } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const AnimatedCounter = ({ target, suffix = '', prefix = '' }) => {
   const [count, setCount] = useState(0);
@@ -327,13 +328,66 @@ const Landing = () => {
                 </div>
                 <span className="font-black text-2xl tracking-tight text-white">RainAI</span>
               </div>
-              <p className="text-slate-400 max-w-xs text-base leading-relaxed mb-8">
-                Empowering developers and climate researchers with AI-driven weather insights.
+              <p className="text-slate-400 max-w-md text-base leading-relaxed mb-4">
+                AI Weather Intelligence Platform powered by Machine Learning, Generative AI, and Real-time Weather Intelligence.
               </p>
+              <p className="text-slate-500 text-sm font-bold mb-8">
+                Built by <span className="text-primary-400">Anas Pathan</span>
+              </p>
+              
+              {/* Social Links */}
               <div className="flex gap-3">
-                {['T','G','L'].map((s) => (
-                  <a key={s} href="#" className="w-10 h-10 rounded-xl bg-white/6 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/12 transition-all text-xs font-black">{s}</a>
-                ))}
+                {[
+                  {
+                    icon: FaGithub,
+                    href: 'https://github.com/pathananas2007/Ai-rainfall-prediction-platform',
+                    label: 'View Source Code',
+                    gradient: 'from-slate-500 to-slate-700',
+                    hoverGlow: 'hover:shadow-slate-500/50',
+                    iconSize: 20
+                  },
+                  {
+                    icon: FaLinkedin,
+                    href: 'https://www.linkedin.com/in/anas-pathan-91a6b3368/',
+                    label: 'Connect on LinkedIn',
+                    gradient: 'from-blue-500 to-blue-700',
+                    hoverGlow: 'hover:shadow-blue-500/50',
+                    iconSize: 20
+                  },
+                  {
+                    icon: Mail,
+                    href: 'mailto:pathananas2007@gmail.com',
+                    label: 'Contact Developer',
+                    gradient: 'from-emerald-500 to-emerald-700',
+                    hoverGlow: 'hover:shadow-emerald-500/50',
+                    iconSize: 20
+                  },
+                  {
+                    icon: Globe,
+                    href: '/dashboard',
+                    label: 'Open Live Demo',
+                    gradient: 'from-primary-500 to-indigo-600',
+                    hoverGlow: 'hover:shadow-primary-500/50',
+                    iconSize: 20
+                  },
+                ].map((social) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <motion.a
+                      key={social.label}
+                      href={social.href}
+                      target={social.href.startsWith('http') ? '_blank' : undefined}
+                      rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`group relative w-12 h-12 rounded-xl bg-white/6 backdrop-blur-xl border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/12 hover:border-white/20 transition-all duration-300 shadow-lg ${social.hoverGlow}`}
+                      title={social.label}
+                    >
+                      <IconComponent size={social.iconSize} className="relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                      <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${social.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
+                    </motion.a>
+                  );
+                })}
               </div>
             </div>
             <div>
@@ -342,19 +396,23 @@ const Landing = () => {
                 <li><Link to="/predict" className="text-slate-400 hover:text-white transition-colors font-medium">Predictions</Link></li>
                 <li><Link to="/analytics" className="text-slate-400 hover:text-white transition-colors font-medium">Analytics</Link></li>
                 <li><Link to="/history" className="text-slate-400 hover:text-white transition-colors font-medium">History</Link></li>
+                <li><Link to="/dashboard" className="text-slate-400 hover:text-white transition-colors font-medium">Dashboard</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-black text-base mb-7 uppercase tracking-widest">Company</h4>
+              <h4 className="text-white font-black text-base mb-7 uppercase tracking-widest">Resources</h4>
               <ul className="space-y-4 text-base">
-                <li><a href="#" className="text-slate-400 hover:text-white transition-colors font-medium">About Us</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-white transition-colors font-medium">Careers</a></li>
-                <li><a href="#" className="text-slate-400 hover:text-white transition-colors font-medium">Contact</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-white transition-colors font-medium">Privacy</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-white transition-colors font-medium">Terms</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-white transition-colors font-medium">API Status</a></li>
+                <li><a href="#" className="text-slate-400 hover:text-white transition-colors font-medium inline-flex items-center gap-2">
+                  Version <span className="px-2 py-0.5 rounded-md bg-primary-500/20 text-primary-400 text-xs font-bold">v1.0</span>
+                </a></li>
               </ul>
             </div>
           </div>
           <div className="pt-8 border-t border-white/8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium text-slate-500">
-            <p>2026 RainAI SaaS. All rights reserved.</p>
+            <p>© 2026 RainAI. All rights reserved. Built with ❤️ using Machine Learning & AI.</p>
             <div className="flex gap-8">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
