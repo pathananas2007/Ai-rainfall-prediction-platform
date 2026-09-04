@@ -65,7 +65,7 @@ All code modifications are complete. All configuration files are in place. All d
 
 ```
 MongoDB URI:     mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0
-JWT Secret Key:  REDACTED_JWT_SECRET_KEY
+JWT Secret Key:  [REDACTED_JWT_SECRET]
 Frontend URL:    https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app
 Backend URL:     https://ai-rainfall-prediction-platform.onrender.com
 GitHub Repo:     https://github.com/pathananas2007/Ai-rainfall-prediction-platform.git
@@ -248,7 +248,7 @@ GitHub Repo:     https://github.com/pathananas2007/Ai-rainfall-prediction-platfo
 ### Render Backend (4 variables to set)
 ```
 MONGO_URI = mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0
-JWT_SECRET_KEY = REDACTED_JWT_SECRET_KEY
+JWT_SECRET_KEY = [REDACTED_JWT_SECRET]
 FRONTEND_URL = https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app
 ENV = production
 ```

@@ -32,7 +32,7 @@ mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.n
 - **Key**: `JWT_SECRET_KEY`
 - **Value**: 
 ```
-REDACTED_JWT_SECRET_KEY
+[REDACTED_JWT_SECRET]
 ```
 - **Click**: Save
 

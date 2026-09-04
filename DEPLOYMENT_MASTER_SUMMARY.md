@@ -66,7 +66,7 @@ Status: Ready - configured in .env
 
 ### ✅ JWT Secret Key
 ```
-Key: REDACTED_JWT_SECRET_KEY
+Key: [REDACTED_JWT_SECRET]
 Status: Ready to set in Render
 ```
 
@@ -87,7 +87,7 @@ Status: Ready to set in Render
 **Environment Variables to Add**:
 ```
 MONGO_URI = mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0
-JWT_SECRET_KEY = REDACTED_JWT_SECRET_KEY
+JWT_SECRET_KEY = [REDACTED_JWT_SECRET]
 FRONTEND_URL = https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app
 ENV = production
 ```

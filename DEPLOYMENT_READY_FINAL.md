@@ -89,7 +89,7 @@
 Add 4 variables:
 ```
 MONGO_URI = mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0
-JWT_SECRET_KEY = REDACTED_JWT_SECRET_KEY
+JWT_SECRET_KEY = [REDACTED_JWT_SECRET]
 FRONTEND_URL = https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app
 ENV = production
 ```
@@ -301,7 +301,7 @@ Value: mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mo
 **Variable 2**:
 ```
 Key: JWT_SECRET_KEY
-Value: REDACTED_JWT_SECRET_KEY
+Value: [REDACTED_JWT_SECRET]
 ```
 
 **Variable 3**:

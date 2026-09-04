@@ -43,7 +43,7 @@ Your deployment infrastructure:
 
    ```
    MONGO_URI = mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0
-   JWT_SECRET_KEY = REDACTED_JWT_SECRET_KEY
+   JWT_SECRET_KEY = [REDACTED_JWT_SECRET]
    FRONTEND_URL = https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app
    ENV = production
    ```
@@ -218,7 +218,7 @@ Database Name: rainai (auto-created)
 ### Render Backend (Need to Set)
 ```
 MONGO_URI = mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0
-JWT_SECRET_KEY = REDACTED_JWT_SECRET_KEY
+JWT_SECRET_KEY = [REDACTED_JWT_SECRET]
 FRONTEND_URL = https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app
 ENV = production
 ```

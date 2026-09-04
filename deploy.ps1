@@ -55,7 +55,7 @@ Write-Host "`nVariable 1: MONGO_URI" -ForegroundColor White
 Write-Host "  mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0" -ForegroundColor Gray
 
 Write-Host "`nVariable 2: JWT_SECRET_KEY" -ForegroundColor White
-Write-Host "  REDACTED_JWT_SECRET_KEY" -ForegroundColor Gray
+Write-Host "  [REDACTED_JWT_SECRET]" -ForegroundColor Gray
 
 Write-Host "`nVariable 3: FRONTEND_URL" -ForegroundColor White
 Write-Host "  https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app" -ForegroundColor Gray

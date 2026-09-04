@@ -44,7 +44,7 @@ PHASE 1: RENDER BACKEND (5 minutes)
    Value: mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0
 
    Key: JWT_SECRET_KEY
-   Value: REDACTED_JWT_SECRET_KEY
+   Value: [REDACTED_JWT_SECRET]
 
    Key: FRONTEND_URL
    Value: https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app
@@ -108,7 +108,7 @@ ENVIRONMENT VARIABLES SUMMARY
 
 RENDER BACKEND (set in Render dashboard):
    MONGO_URI = mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0
-   JWT_SECRET_KEY = REDACTED_JWT_SECRET_KEY
+   JWT_SECRET_KEY = [REDACTED_JWT_SECRET]
    FRONTEND_URL = https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app
    ENV = production
 
@@ -227,7 +227,7 @@ Render MONGO_URI:
    mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0
 
 Render JWT_SECRET_KEY:
-   REDACTED_JWT_SECRET_KEY
+   [REDACTED_JWT_SECRET]
 
 Render FRONTEND_URL:
    https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app
