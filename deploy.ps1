@@ -10,7 +10,7 @@ Write-Host "================================" -ForegroundColor Green
 
 # Configuration
 $MONGO_URI = "mongodb+srv://pathananas2007_db_user:rzZdJPUY92mzzHLz@cluster0.t5arvrt.mongodb.net/?appName=Cluster0"
-$JWT_SECRET = "REDACTED_JWT_SECRET_KEY"
+$JWT_SECRET = "[YOUR_JWT_SECRET_KEY]"
 $FRONTEND_URL = "https://ai-rainfall-prediction-platform-k4e5-6m2ni3gty.vercel.app"
 $BACKEND_URL = "https://ai-rainfall-prediction-platform.onrender.com"
 $API_URL = "$BACKEND_URL/api"
